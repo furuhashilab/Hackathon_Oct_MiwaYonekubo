@@ -1,0 +1,25 @@
+{
+  "bbox": [35.615, 139.845, 35.680, 139.930],
+  "start": { "name": "舞浜駅", "lat": 35.6363, "lon": 139.8834 },
+  "exclude_name_pattern": "ディズニー|Disney|DISNEY|ミッキー|ミニー|Mickey",
+  "categories": {
+    "park":     { "label": "公園・広場",       "icon": "🌳", "indoor": false, "osm": ["leisure=park", "leisure=garden"] },
+    "beach":    { "label": "海・水辺",         "icon": "🌊", "indoor": false, "osm": ["natural=beach", "leisure=marina", "leisure=fishing", "man_made=pier"] },
+    "view":     { "label": "景色・展望",       "icon": "🎡", "indoor": false, "osm": ["tourism=viewpoint", "attraction=big_wheel"] },
+    "nature":   { "label": "自然・生きもの",   "icon": "🐦", "indoor": false, "osm": ["leisure=nature_reserve", "leisure=bird_hide"] },
+    "aquarium": { "label": "水族館",           "icon": "🐟", "indoor": true,  "osm": ["tourism=aquarium"] },
+    "museum":   { "label": "博物館・ギャラリー", "icon": "🏛️", "indoor": true,  "osm": ["tourism=museum", "tourism=gallery"] },
+    "history":  { "label": "歴史・寺社",       "icon": "⛩️", "indoor": false, "osm": ["historic", "amenity=place_of_worship"] },
+    "cafe":     { "label": "カフェ",           "icon": "☕", "indoor": true,  "osm": ["amenity=cafe"] },
+    "sweets":   { "label": "スイーツ・パン",   "icon": "🍰", "indoor": true,  "osm": ["shop=confectionery", "shop=pastry", "shop=bakery", "amenity=ice_cream"] },
+    "food":     { "label": "ごはん",           "icon": "🍜", "indoor": true,  "osm": ["amenity=restaurant"] },
+    "seafood":  { "label": "海鮮",             "icon": "🦪", "indoor": true,  "osm": ["shop=seafood", "cuisine=seafood", "cuisine=sushi"] },
+    "bath":     { "label": "温浴・銭湯",       "icon": "♨️", "indoor": true,  "osm": ["amenity=public_bath", "leisure=sauna"] },
+    "shopping": { "label": "ショッピング",     "icon": "🛍️", "indoor": true,  "osm": ["shop=mall", "shop=department_store"] },
+    "sports":   { "label": "スポーツ・体験",   "icon": "🏃", "indoor": false, "osm": ["leisure=sports_centre", "leisure=bowling_alley", "leisure=amusement_arcade", "leisure=miniature_golf", "leisure=water_park"] },
+    "play":     { "label": "子どもの遊び場",   "icon": "🛝", "indoor": false, "osm": ["leisure=playground"] },
+    "library":  { "label": "図書館",           "icon": "📚", "indoor": true,  "osm": ["amenity=library"] },
+    "cinema":   { "label": "映画・エンタメ",   "icon": "🎬", "indoor": true,  "osm": ["amenity=cinema", "amenity=theatre", "amenity=karaoke_box"] },
+    "attraction": { "label": "見どころ",       "icon": "📍", "indoor": false, "osm": ["tourism=attraction"] }
+  }
+}

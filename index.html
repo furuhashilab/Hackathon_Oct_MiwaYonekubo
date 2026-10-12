@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>舞浜の観光客向け創作マップ</title>
+  <meta name="description" content="なんとなくの気分を書くと、舞浜・浦安周辺でディズニー以外に遊べる場所をOpenStreetMapから選んで観光ツアーマップを作ります。">
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <aside id="panel">
+    <header>
+      <h1>舞浜の観光客向け創作マップ</h1>
+      <p class="lead">今日の気分をなんとなく書いてください。舞浜駅を出発して、ディズニー<strong>以外</strong>で楽しめる場所をめぐるツアーを作ります。</p>
+    </header>
+
+    <form id="form">
+      <textarea id="query" rows="3" placeholder="例：人混みは苦手。海を見ながらのんびり散歩して、おいしい海鮮が食べたい">海を見ながらのんびり散歩して、おいしい海鮮が食べたい</textarea>
+      <div class="row">
+        <button type="submit">ツアーを作る</button>
+        <button type="button" id="reroll" class="ghost">別の案</button>
+        <label class="live"><input type="checkbox" id="live"> Overpass APIでライブ検索</label>
+      </div>
+      <div class="examples">
+        <button type="button" class="example">雨の日に子どもと室内で遊びたい</button>
+        <button type="button" class="example">人混みは苦手。昔の浦安の歴史を感じたい</button>
+        <button type="button" class="example">自転車で一日アクティブに遊びたい</button>
+        <button type="button" class="example">デートで夕日がきれいな場所とカフェ</button>
+        <button type="button" class="example">一人でゆっくり本を読んで、温泉で癒されたい</button>
+      </div>
+    </form>
+
+    <section>
+      <h2><span class="step">1</span>ことばの解釈</h2>
+      <ul id="intent" class="chips"></ul>
+      <details>
+        <summary>生成された Overpass QL を見る</summary>
+        <pre id="ql"></pre>
+      </details>
+    </section>
+
+    <section>
+      <h2><span class="step">2</span>ツアー</h2>
+      <p id="summary" class="summary"></p>
+      <ol id="tour"></ol>
+      <p class="source">データ：<span id="source"></span></p>
+    </section>
+
+    <footer>
+      <p>FOSS4G Hiroshima 2026「<a href="https://talks.osgeo.org/foss4g-2026/talk/78TXXS/" target="_blank" rel="noopener">Building an AI Map Agent with Self-Hosted Planet-Scale OSM and Tiny LLMs</a>」（Yui Matsumura）の TRIDENT のしくみ（文章 → Overpass QL → OSM → 地図）を、LLMの代わりに辞書ルールで再現しました。</p>
+      <p>地図：地理院タイル ／ POI：© OpenStreetMap contributors（ODbL、<span id="snapshot-date"></span> 取得） ／ 移動時間は直線距離×1.3 の目安です。営業時間や休業日は各施設でご確認ください。</p>
+      <p>© 2026 Miwa ／ <a href="https://creativecommons.org/licenses/by/4.0/deed.ja" target="_blank" rel="noopener">CC BY 4.0</a> ／ <a href="https://github.com/furuhashilab/Hackathon_Oct_Miwa" target="_blank" rel="noopener">GitHub</a></p>
+    </footer>
+  </aside>
+  <main id="map"></main>
+</body>
+</html>
