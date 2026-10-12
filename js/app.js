@@ -40,6 +40,7 @@ async function init() {
     },
     center: [conf.start.lon, conf.start.lat],
     zoom: 13,
+    attributionControl: { compact: true },
   });
   map.addControl(new maplibregl.NavigationControl(), "top-right");
   map.on("load", () => {
