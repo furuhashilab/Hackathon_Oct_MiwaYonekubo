@@ -1,4 +1,4 @@
-# 舞浜の観光客向け創作マップ
+# 舞浜の観光客向け創作マップ🗺️
 
 **▶ デモ: https://furuhashilab.github.io/Hackathon_Oct_Miwa/**
 
